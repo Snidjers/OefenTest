@@ -1,0 +1,109 @@
+﻿@model BerryAutoService.Models.Auto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Auto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @if (Model.Files.Any(f => f.FileType == BerryAutoService.Models.FileType.Avatar))
+        {
+            {
+            <dt>
+                Avatar
+            </dt>
+            <dd>
+                <img src="~/File?id=@Model.Files.First(f => f.FileType == BerryAutoService.Models.FileType.Avatar).FileId" alt="avatar" />
+            </dd>
+            }
+        }
+        <dt>
+            @Html.DisplayNameFor(model => model.Merk)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Merk)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bouwjaar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bouwjaar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prijs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prijs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kilometerstand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kilometerstand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Brandstof)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brandstof)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Transmissie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Transmissie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.APKverloopdatum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.APKverloopdatum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BtwJaNee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BtwJaNee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExtraInformatie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExtraInformatie)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CarID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
